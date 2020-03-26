@@ -3,7 +3,9 @@
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:paddingLeft="16dp"
+    android:background="@color/colorPrimary"
     android:paddingRight="16dp"
+    android:paddingBottom="8dp"
     android:paddingTop="8dp">
 
     <LinearLayout
@@ -14,12 +16,15 @@
         <TextView
             android:id="@+id/tv_total_cases"
             android:text="352525"
+            android:layout_margin="6dp"
             style="@style/LabelFontStyle"
             android:textColor="@color/colorTotalConfirmed"
             android:textSize="20sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
         <TextView
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="6dp"
             android:id="@+id/tv_country_name"
             android:text="China"
             style="@style/LabelFontStyle"

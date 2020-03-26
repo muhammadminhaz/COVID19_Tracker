@@ -7,7 +7,26 @@
     android:background="@color/colorPrimary"
     tools:context=".ui.country.CountryFragment">
 
+    <LinearLayout
+        android:id="@+id/linearlayout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/colorPrimaryDark"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/tv_total_countries"
+            style="@style/TotalFontStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="#fff"
+            android:textSize="24sp" />
+
+    </LinearLayout>
+
     <androidx.recyclerview.widget.RecyclerView
+        android:layout_below="@id/linearlayout"
         android:id="@+id/rv_covid_country"
         tools:listitem="@layout/item_list_covid_country"
         android:layout_width="match_parent"
