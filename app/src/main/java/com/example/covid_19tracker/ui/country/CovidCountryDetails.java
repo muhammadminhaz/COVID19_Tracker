@@ -15,7 +15,7 @@ public class CovidCountryDetails extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_covid_country_details);
-
+        this.getSupportActionBar().hide();
         tvDetailCountryName = findViewById(R.id.tv_detail_country_name);
         tvDetailTotalCases = findViewById(R.id.tv_detail_total_cases);
         tvDetailTotalDeaths = findViewById(R.id.tv_detail_total_death);

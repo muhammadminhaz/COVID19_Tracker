@@ -14,7 +14,7 @@
         android:layout_marginEnd="0dp"
         app:itemTextAppearanceInactive="@style/BottomNavigationView"
         app:itemTextAppearanceActive="@style/BottomNavigationView"
-        android:background="@color/colorPrimaryDark"
+        android:background="@drawable/grad_1"
         android:layout_alignParentBottom="true"
         app:menu="@menu/bottom_nav_menu" />
 
