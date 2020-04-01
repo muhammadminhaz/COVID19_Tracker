@@ -9,12 +9,14 @@
     tools:context=".ui.country.CovidCountryDetails">
 
     <LinearLayout
+        android:layout_margin="16dp"
         android:id="@+id/linear_country_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true">
 
         <TextView
+            android:textAlignment="center"
             android:id="@+id/tv_detail_country_name"
             style="@style/TotalFontStyle"
             android:layout_width="wrap_content"

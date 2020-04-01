@@ -37,6 +37,7 @@ public class CountryFragment extends Fragment {
     TextView textView;
     ProgressBar progressBar;
     ArrayList<CovidCountry> covidCountries;
+
     private static final String TAG = CountryFragment.class.getSimpleName();
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -57,7 +58,7 @@ public class CountryFragment extends Fragment {
     }
 
     private void showRecyclerView() {
-        CovidCountryAdapter covidCountryAdapter = new CovidCountryAdapter(covidCountries);
+        CovidCountryAdapter covidCountryAdapter = new CovidCountryAdapter(covidCountries, getActivity());
         rvCovidCountry.setAdapter(covidCountryAdapter);
 
         ItemClickListener.addTo(rvCovidCountry).setOnItemClickListener(new ItemClickListener.OnItemClickListener() {
@@ -84,9 +85,22 @@ public class CountryFragment extends Fragment {
                 if (response != null) {
                     try {
                         JSONArray jsonArray = new JSONArray(response);
+
+
                         for (int i = 0; i < jsonArray.length(); i++) {
                             JSONObject data = jsonArray.getJSONObject(i);
-                            covidCountries.add(new CovidCountry(data.getString("country"), data.getString("cases"), data.getString("todayCases"), data.getString("deaths"), data.getString("todayDeaths"), data.getString("recovered"), data.getString("critical"), data.getString("active")));
+                            JSONObject countryInfo = data.getJSONObject("countryInfo");
+                            covidCountries.add(new CovidCountry(
+                                    data.getString("country"),
+                                    data.getString("cases"),
+                                    data.getString("todayCases"),
+                                    data.getString("deaths"),
+                                    data.getString("todayDeaths"),
+                                    data.getString("recovered"),
+                                    data.getString("critical"),
+                                    data.getString("active"),
+                                    countryInfo.getString("flag")
+                            ));
                         }
                         textView.setText(jsonArray.length() + " Countries");
                         showRecyclerView();
